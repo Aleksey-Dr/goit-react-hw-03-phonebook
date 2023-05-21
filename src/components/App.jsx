@@ -13,6 +13,21 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+
+    parsedContacts &&
+      this.setState({
+        contacts: parsedContacts,
+      });
+  };
+
+  componentDidUpdate(_, prevState) {
+    this.state.contacts !== prevState.contacts &&
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+  };
+
   addContact = (name, number) => {
     const contact = {
       id: shortid.generate(),

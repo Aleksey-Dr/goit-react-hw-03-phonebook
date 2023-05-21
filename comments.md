@@ -25,3 +25,15 @@ Coppy the files from "goit-react-hw-02-phonebook"
 4. Copied "filter".
 5. Copied "data".
 6. Update "App.jsx".
+
+Add seving phone book contacts to localStorage
+1. When you add or remove a contact, the contacts are saved to local storage.
+2. Added componentDidUpdate to the "App,jsx" (for save contacts to "localStorage").
+3. Added condition to the componentDidUpdate.
+4. Added localStorage.setItem('contacts', JSON.stringify(this.state.contacts)).
+5. When app load contacts, if is they, they read from "localStorage" and write to the state.
+6. Added localStorage.getItem('contacts').
+7. Added JSON.parse(contacts).
+8. Added condition to check if data is in the state.
+9. Added write data from "licalStorage" to the state.
+10. Used methods of "life cicle".
